@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,7 +42,7 @@ namespace Testing
             //var w3 = Console.ReadLine();      //swap
             var w3 = "typiskstring";        //swap
             var lengde = w3.Length;
-            
+
             var final = w3.Substring(w3.Length-1,1) + w3.Substring(1, lengde-2) + w3.Substring(0, 1);
 
             Console.WriteLine(final);
@@ -156,7 +157,7 @@ namespace Testing
             */
 
 
-            // Find longest word.
+            //  24. Write a C# program to find the longest word in a string.
             /*
             string line = "Write a C# Sharp Program to display the following pattern using the alphabet. Supercallifragilisticexpialidocious";
 
@@ -189,13 +190,191 @@ namespace Testing
             Console.WriteLine(int1 == 20 || int2 == 20 || (sum == 20)); // Not my code. But loved the solution.
             */
 
+            // Had to use breakpoints to find out how this worked. Actually surprised it was made understandable.
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //int sum = 0;
+            /* while (n != 0)
+             {
+                 sum += n % 10;
+                 n /= 10;
+             }
+             Console.WriteLine("Sum of the digits of the said integer: " + sum);
+             */
 
 
+            //    28.Write a C# program to reverse the words of a sentence.
+            /*
+            var sentence = "Display the pattern like pyramid using the alphabet.";
+
+            string[] words = sentence.Split(' ');
+            Stack stækk = new Stack();
+
+            foreach (string word in words)
+            {
+                stækk.Push(word);
+            }
+
+            while(stækk.Count > 0)
+            {
+                Console.WriteLine(stækk.Pop());
+            }
+            */
 
 
+            //  30.Write a C# program to convert a hexadecimal number to decimal number.
+            /*
+            var bitValue = "11110111";
+            var hexValue = "10DA";
+
+            int interValue = Convert.ToInt32(bitValue, 2); // 2base system. 0-1 Binary.
+            int integerValue = Convert.ToInt32(hexValue, 16); // 16base number system. 1-F HEX
 
 
+            Console.WriteLine(interValue);
+            Console.WriteLine(integerValue);
+            */
 
+            //  33. Write a C# program to check if a given positive number is a multiple of 3 or a multiple of 7
+            /*
+            Console.WriteLine("a :");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            if(a % 3 == 0 | a % 7 == 0)
+            {
+                Console.WriteLine(true);
+            }
+            else Console.WriteLine(false);
+            */
+
+
+            //  34. Write a C# program to check if a string starts with a specified word.
+            //  Note: Suppose the sentence starts with "Hello"
+            /*
+            string hallo = "Hello how are you?";
+
+            if (hallo.StartsWith("Hello"))
+            {
+                Console.WriteLine(true);
+            }
+            else Console.WriteLine(false);
+            */
+
+            //  39. Write a C# program to find the largest and lowest values from three integer values.
+            /*
+            var tall1 = Convert.ToInt32(Console.ReadLine());
+            var tall2 = Convert.ToInt32(Console.ReadLine());
+            var tall3 = Convert.ToInt32(Console.ReadLine());
+
+
+            int størst = Math.Max(tall1, Math.Max(tall2, tall3)); //neat
+            int minst = Math.Min(tall1, Math.Min(tall2, tall3));
+            //Math.Max(tall1, tall2);  // messy
+            //Math.Max(tall2, tall3);
+            Console.WriteLine("Largest: " + størst);
+            Console.WriteLine("Smallest: " + minst);
+            */
+
+
+            //  40. Write a C# program to check the nearest value of 20 of two given integers
+            //  and return 0 if two numbers are same.
+            /*
+            Console.WriteLine("input 2 integers.");
+            var tall1 = Convert.ToInt32(Console.ReadLine());
+            var tall2 = Convert.ToInt32(Console.ReadLine());
+
+            int diff1 = Math.Abs(tall1 - 20);
+            int diff2 = Math.Abs(tall2 - 20);
+
+            if(diff1 > diff2)
+            {
+                Console.WriteLine($"{tall2} is closer to 20 than {tall1}");
+            }
+            else
+            {
+                Console.WriteLine($"{tall1} is closer to 20 than {tall2}");
+            }
+            */
+
+            //  41. Write a C# program to check if a given string contains ‘w’ character between 1 and 3 times.
+            //Test Data:
+            //Input a string(contains at least one 'w' char) : w3resource
+            //Test the string contains 'w' character between 1 and 3 times:
+            /*
+            string input = "world wide web weavers";
+
+            //Console.WriteLine(input.Contains('w'));
+
+            char[] charray = new char[input.Length];
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                charray[i] = input[i];
+            }
+
+            int counter = 0;
+
+            foreach (char bokstav in charray)
+            {
+                if (bokstav.Equals('w'))
+                {
+                    counter++;
+                }
+            }
+            Console.WriteLine("There are {0} 'w' inside the '{1}' string",counter, input);
+            Console.WriteLine("The statement is: " + (counter > 0 && counter < 4));
+            */
+
+            //  42. Write a C# program to create a new string where the first 4 characters will be in lower case.
+            //  If the string is less than 4 characters then make the whole string in upper case. 
+            /*
+            var stringeling =Console.ReadLine();
+
+            if(stringeling.Length > 4)
+            {
+                Console.WriteLine(stringeling.Substring(0, 4).ToLower() + stringeling.Substring(4));
+            }
+            else
+            {
+                Console.WriteLine(stringeling.ToUpper());
+            }
+            */
+
+            //  43.Write a C# program to check if a given string starts with "w" and immediately followed by two "ww"
+            /*
+            string sample = "w ww ww string";
+
+            string nospace = sample.Replace(" ", string.Empty);
+
+            Console.WriteLine(nospace.StartsWith("wwwww"));
+            */
+
+            //  44. Write a C# program to create a new string of every other character
+            //  (odd position) from the first position of a given string
+            /*
+            var full = "IWillMakeANewStringOfEveryOtherCharacter.";
+            int lengde = full.Length;
+            string oddString = "";
+            
+
+            for(int i = 0; i < lengde; i++) 
+            {
+                if (i % 2 == 0)
+                {
+                    oddString += full[i];
+                }
+            }
+            Console.WriteLine(oddString);
+            */
+
+            //  45. Write a C# program to count a specified number in a given array of integers.
+
+            
+            int[] arra = new int[] { 7,6,7,4,7,9 };
+
+            Console.WriteLine("Insert number to search for in array:");
+            int search = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(arra.Count(n => n == search));
 
 
         }
