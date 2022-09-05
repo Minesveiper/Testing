@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -354,7 +355,7 @@ namespace Testing
             var full = "IWillMakeANewStringOfEveryOtherCharacter.";
             int lengde = full.Length;
             string oddString = "";
-            
+
 
             for(int i = 0; i < lengde; i++) 
             {
@@ -367,18 +368,167 @@ namespace Testing
             */
 
             //  45. Write a C# program to count a specified number in a given array of integers.
-
-            
-            int[] arra = new int[] { 7,6,7,4,7,9 };
+            /*
+            int[] arra = { 7,6,7,4,7,9 };
 
             Console.WriteLine("Insert number to search for in array:");
             int search = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine(arra.Count(n => n == search));
+            */
+
+            //  46.Write a C# program to check if a number appears as either the first or
+            //  last element of an array of integers and the length is 1 or more.
+            /*
+            Console.WriteLine("What integer to scan for?");
+            int search = Convert.ToInt32(Console.ReadLine());
+
+            int[] arra = { 7, 6, 7, 4, 7, 9 };
+
+            Console.WriteLine(arra[0] == search || arra[arra.Length -1] == search);
+            */
+
+            //  50. Write a C# program to rotate an array (length 3) of integers in left direction.
+            /*
+            int[] arra = { 7, 6, 7, 4, 7, 9 };
+            var temp = arra[0];
+
+            for (int i = 0; i < arra.Length -1; i++)
+            {
+                arra[i] = arra[i + 1];
+            }
+            arra[arra.Length - 1] = temp;
+
+            Console.Write("Array now holds: ");
+            foreach (var item in arra)
+            {
+                Console.Write($"{item}, ");
+            }
+            */
+
+            //  51.Write a C# program to get the larger value between first and
+            //  last element of an array (length 3) of integers.
+            /*
+            int[] array1 = { 1, 2, 5, 7, 8 };
+
+            int max = 0;
+
+            for (int i = 0; i < array1.Length; i++)
+            {
+                if (array1[ i ] > max)
+                {
+                    max = array1[i];
+                }
+            }
+
+            Console.WriteLine("Maxvalue in the array is {0}.", max);
+            */
+
+
+            //  58.Write a C# program which will accept a list of integers and checks how many
+            //  integers are needed to complete the range. Go to the editor
+            //  Sample Example[1, 3, 4, 7, 9], between 1 - 9-> 2, 5, 6, 8 are not present in the list.
+            //  So output will be 4.
+            /*
+            int[] array = {1, 3, 4, 7, 9};
+            Array.Sort(array);
+
+            int counter = 0;
+
+            for (int i = array.Min(); i < array.Max(); i++)
+            {
+                if (!array.Contains(i))
+                {
+                    counter++;
+                }
+
+            }
+
+            Console.WriteLine("Number of integers missing for complete chain is: " + counter);
+            */
+
+
+            //  64. Write a C# Sharp program to get the file name (including extension) from a given path.
+            /*
+            string filePath;
+            filePath = "c:/csharp/ex/test.cpp";
+            
+            Console.WriteLine(Fila(filePath));
+
+            filePath = @"E:\Unreal Tournament GOTY\System\editorres\TexturePan.bmp";
+            
+            Console.WriteLine(Fila(filePath));
+            */
+
+
+            //  67. Write a C# Sharp program to create a coded string from a given string, using specified formula.
+            //  Replace all 'P' with '9', 'T' with '0', 'S' with '1', 'H' with '6' and 'A' with '8'.
+            //  Sample Output: 969 J8V81CRI90
+
+            var decoded = "This will be alphabetsoup after encoding. abcdefghijklmnopqrstuvwxyzæøå";
+
+            string[] array1;
+
+            foreach (char bokstav in decoded)
+            {
+                Encoder(bokstav);
+                
+            }
+
+            
+            
+
+
+
 
 
         }
 
+
+        public static char Encoder(char bokstav)
+        {
+            switch (bokstav)
+            {
+                case 'a':
+                case 'A':
+                    {
+                        return '8';
+                    }
+                case 't':
+                case 'T':
+                    {
+                        return '0';
+                    }
+                case 'p':
+                case 'P':
+                    {
+                        return '9';
+                    }
+                case 's':
+                case 'S':
+                    {
+                        return '1';
+                    }
+                case 'h':
+                case 'H':
+                    {
+                        return '6';
+                    }
+                default:
+                    {
+                        return bokstav;
+                    }
+                    
+            }
+        }
+
+        public static string Fila(string filePath)
+        {
+            return Path.GetFileName(filePath);
+            
+        }
+
+        
 
         /*
         public static bool result(int n)
