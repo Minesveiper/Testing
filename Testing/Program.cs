@@ -557,31 +557,16 @@ namespace Testing
             Console.WriteLine(Equality(trapp));
             Console.ReadLine();
 
-
-        }
-
-
-
-        public static bool Equality(string text)
-        {
-            bool result = false;
-
-            for (int i = 0; i < text.Length; i++)
+            foreach (char bokstav in decoded)
             {
-                result = text[0] == text[i];
-                if (!result)
-                {
-                    return false;
-                }
+                Encoder(bokstav);
                 
             }
-             return result;
-			
-                
-           
-		}
-	    
-        
+
+            
+            
+
+
 
 
 
