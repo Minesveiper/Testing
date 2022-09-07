@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
 
 namespace Testing
 {
@@ -464,29 +466,171 @@ namespace Testing
             //  67. Write a C# Sharp program to create a coded string from a given string, using specified formula.
             //  Replace all 'P' with '9', 'T' with '0', 'S' with '1', 'H' with '6' and 'A' with '8'.
             //  Sample Output: 969 J8V81CRI90
-
+            /*
             var decoded = "This will be alphabetsoup after encoding. abcdefghijklmnopqrstuvwxyzæøå";
-
-            string[] array1;
-
-            foreach (char bokstav in decoded)
+            var encoded = "";
+            char[] soup = decoded.ToCharArray();
+            
+            foreach (var bokstav in soup)
             {
-                Encoder(bokstav);
-                
+                encoded += Encoder(bokstav);
+
             }
 
+            Console.WriteLine(encoded);
+            */
+
+
+            //  71. Write a C# Sharp program to check if a given string contains two similar consecutive letters.
+            /*
+            var nr1 = "php";
+            var nr2 = "PHHP";
+            var nr3 = "PHPp";
+            var nr4 = "PPHP";
+
+
+            Console.WriteLine(Consec(nr1.ToLower()));
+            Console.WriteLine(Consec(nr2.ToLower()));
+            Console.WriteLine(Consec(nr3.ToUpper()));
+            Console.WriteLine(Consec(nr4.ToUpper()));
+            */
+            /*
+            Console.WriteLine("Original string: PHP");
+            Console.WriteLine("Convert the letters of the said string into alphabetical order: " + test("PHP"));
+            Console.WriteLine("Original string: javascript");
+            Console.WriteLine("Convert the letters of the said string into alphabetical order: " + test("javascript"));
+            Console.WriteLine("Original string: python");
+            Console.WriteLine("Convert the letters of the said string into alphabetical order: " + test("python"));
+            */
+
+            /*
+            List<int> numbers = new List<int>() {36, 71, 12,
+                             15, 29, 18, 27, 17, 9, 34};
+
+            var square = numbers.Select(x => x * x);
+            */
+
+            //  74. Write a C# Sharp program to check the length of a given string is odd or even.
+            //  Return 'Odd length' if the string length is odd otherwise 'Even length'.
+            /*
+            var type1 = "Her har du en string.";
+            var type2 = "Her er enda en string.";
+
+            OddEven(type1);
+            OddEven(type2);
+            */
+
+            //  83. Write a C# Sharp program to remove all vowels from a given string. 
+            /*
+            string alfabet = "abcdefghijklmnopqrstuvwxyzæøå";
+
+            Console.WriteLine(AlfaStrip(alfabet));
+            Console.ReadLine();
+            */
+
+
+            //  94. Write a C# program that finds the longest common prefix from an array of strings.
+            /*
+            string[] samples = { "Padas", "Packed", "Pace", "Pacha" };
+
+            //var commonPrefix = new string(samples.Min().TakeWhile((c, i) => samples.All(s => s[i] == c)).ToArray());
+
+            var commonPrefix = new string(samples.Min().TakeWhile((c, i) => samples.All(s => s[i] == c)).ToArray());    
             
-            
 
 
+            Console.WriteLine(commonPrefix);
+            Console.ReadLine();
+            */
 
+            //  96. Write a C# Sharp program to check whether all the characters in a string are the same.
+            //  Return true if all the characters in the said string are same otherwise false.
+
+            var trippelA = "aaa";   //  ("aaa") -> True
+            var alfa = "abcd";      //  ("abcd") -> False
+            var quadTre = "3333";   //  ("3333") -> True
+            var trapp = "2342342";  //  ("2342342") -> False
+
+            Console.WriteLine(Equality(trippelA));
+            Console.WriteLine(Equality(alfa));
+            Console.WriteLine(Equality(quadTre));
+            Console.WriteLine(Equality(trapp));
+            Console.ReadLine();
 
 
         }
 
 
+
+        public static bool Equality(string text)
+        {
+            bool result = false;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                result = text[0] == text[i];
+                if (!result)
+                {
+                    return false;
+                }
+                
+            }
+             return result;
+			
+                
+           
+		}
+	    
+        
+
+
+
+        public static string AlfaStrip(string herodes)
+        {
+            return new Regex(@"[aeiouyæøåAEIOUYÆØÅ]").Replace(herodes, "");
+        } 
+
+
+
+
+
+        public static void OddEven(string lengde)
+        {
+            if(lengde.Length % 2 == 0)
+            {
+                Console.WriteLine("The string is an even number of letters.");
+            }
+            else
+            {
+                Console.WriteLine("The string is an odd number of letters.");
+            }
+        }
+
+
+        public static string test(string str1)
+        {
+            //return new string(str1.OrderBy(x => x).ToArray());
+            return new string(str1.OrderByDescending(x => x).ToArray());
+        }
+
+
+
+        public static bool Consec(string param)
+        {
+            
+            for (int i = 0; i < param.Length-1; i++)
+            {
+                if (param[i] == param[i+1])
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static char Encoder(char bokstav)
         {
+            
             switch (bokstav)
             {
                 case 'a':
@@ -524,8 +668,7 @@ namespace Testing
 
         public static string Fila(string filePath)
         {
-            return Path.GetFileName(filePath);
-            
+            return Path.GetFileName(filePath);   
         }
 
         
@@ -536,15 +679,6 @@ namespace Testing
             if (Math.Abs(n - 100) <= 20 || Math.Abs(n - 200) <= 20)
                 return true;
             return false;
-
-
-
-
-
-
-
-
-
         }
         */
     }
